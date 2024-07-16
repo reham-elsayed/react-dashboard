@@ -1,22 +1,40 @@
-import logo from './logo.svg';
+import Interface from "./interface.js"
+import './tailwind.css';
+import Numbertrans from "./numbertrasc.js"
 import './App.css';
-
+import React, { useState, useEffect } from 'react';
 function App() {
+
+  const [users, setUsers] = useState([]);
+  const [trans, setTrans] = useState([]);
+
+  useEffect(() => {
+    fetch(`http://localhost:3001/customers`)
+      .then((res) => res.json())
+      .then((data) => {
+        setUsers(data);
+        console.log("users",data)
+      });
+  }, []);
+
+  useEffect(() => {
+      fetch(`http://localhost:3001/transactions`)
+        .then((res) => res.json())
+        .then((data) => {
+          setTrans(data);
+          console.log("transactions",data)
+        });
+    }, []);
   return (
+
+
+
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <header className="bg-lime-700 App-header">
+        
+        
+       <Interface users={users} trans={trans} /> 
+        <Numbertrans users={users} trans={trans} />
       </header>
     </div>
   );

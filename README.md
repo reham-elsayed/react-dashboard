@@ -68,3 +68,23 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+  <input id="inputname" className="text-blue-950" type="text" /> 
+            <button className="text-blue-950 basis-7/12" onClick={handleInputChange}> search</button>
+            <h1>Users</h1>
+            <div>
+      {filteredUsers.map((pair) => (
+        <div key={pair.id}>
+          <h3>Transactions for {pair.name}</h3>
+          </div>
+          ))}
+
+         
+            {matchedActions.map((transaction) => (
+                 <ul>
+              <li key={transaction.id}>{transaction.amount}</li>
+            
+          </ul>
+      
+      ))}
+### start server
+ json-server --watch db.json --port 3001
