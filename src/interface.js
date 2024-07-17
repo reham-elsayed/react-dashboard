@@ -1,6 +1,6 @@
 
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 export default function Interface( { users, trans }) {
     
@@ -27,19 +27,8 @@ const inputname =document.getElementById("inputname")
 
 console.log("searchTerm",searchTerm)
   const filterUsersAndTransactions = () => {
-    const filteredUsers = users.filter(user =>
-      {
-        console.log('Checking against:', user.name.toLowerCase());
-        if (user.name.toLowerCase().includes(searchTerm)){
+    const filteredUsers = users.filter(user =>user.name.toLowerCase().includes(searchTerm))
           
-          return user 
-              }
-             
-        }
-      );
-
-
-
       console.log(filteredUsers) 
      filteredUsers.forEach((user)=>{
       const matchedTransaction = trans.filter((tran)=>tran.customer_id === parseInt(user.id))

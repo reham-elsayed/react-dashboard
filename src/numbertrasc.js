@@ -5,11 +5,8 @@ import React, { useState, useEffect } from 'react';
 export default function Numbertrans( { users, trans }) {
     
 const [ninput, setNinput] = useState('')
- const [uzur, setUser] = useState([])      
  const [ tranz, setTranz] = useState([]) 
  const transusermap = new Map()
- const  matchingEntries = new Map()
- const newtemp =[]
 const handleInput = (event) => {
     const inputnum = document.getElementById("inputnum")
 
