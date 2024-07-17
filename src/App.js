@@ -9,7 +9,7 @@ function App() {
   const [trans, setTrans] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:3001/customers`)
+    fetch(`https://my-json-server.typicode.com/reham-elsayed/react-dashboard/customers`)
       .then((res) => res.json())
       .then((data) => {
         setUsers(data);
@@ -18,7 +18,7 @@ function App() {
   }, []);
 
   useEffect(() => {
-      fetch(`http://localhost:3001/transactions`)
+      fetch(`https://my-json-server.typicode.com/reham-elsayed/react-dashboard/transactions`)
         .then((res) => res.json())
         .then((data) => {
           setTrans(data);
